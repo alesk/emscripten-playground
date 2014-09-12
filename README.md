@@ -2,7 +2,7 @@
 
 ## Installation
 
-Use [mscripten SDK][1] to setup emscripten environment. Download **portable version* of SDK,
+Use [emscripten SDK][1] to setup emscripten environment. Download **portable version** of SDK,
 `unpack` and `cd` to dir. Then:
 
     # Fetch the latest registry of available tools
@@ -22,6 +22,29 @@ Read [Emscripten Tutorial][2].
 
 
 ## Examples
+
+### Run `average.c` in browser
+
+The content of simple file for calculating average:
+
+
+```c
+#include <stdio.h>
+
+double average(int len,  const double array[]) {
+    double avg = 0;
+    for (int i=0; i < len; i+=1) {
+        avg += array[i];
+    }
+
+    return avg/len;
+}
+
+int main() {
+    const double a[] = {10.2, 11.3, 10.3};
+    printf("Average is %f\n", average(3, a));
+}
+```
 
 To see emscripten in action, compile `average.c` and run it inside `average.html`:
 
