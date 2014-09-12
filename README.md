@@ -21,6 +21,12 @@ Use [mscripten SDK][1] to setup emscripten environment. Download **portable vers
 Read [Emscripten Tutorial][2].
 
 
+## Examples
+
+To see emscripten in action, compile `average.c` and run it inside `average.html`:
+
+    emcc -s EXPORTED_FUNCTIONS="['_main', '_average']" -s NO_EXIT_RUNTIME=1 average.c -o average.js
+    open average.html
 
 
 [1]: http://kripken.github.io/emscripten-site/docs/getting_started/downloads.html
